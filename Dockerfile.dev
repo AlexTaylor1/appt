@@ -1,0 +1,18 @@
+FROM node:14
+
+WORKDIR '/app'
+
+COPY Gruntfile.js Gruntfile.js
+COPY ./tasks ./tasks
+COPY ./package.json ./
+
+RUN npm install
+
+COPY ./assets ./assets
+RUN npx grunt build --allow-root
+
+COPY . .
+
+EXPOSE 1337
+
+CMD [ "npm", "run", "dev" ]
