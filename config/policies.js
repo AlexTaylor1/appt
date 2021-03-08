@@ -16,8 +16,6 @@ module.exports.policies = {
   * (`true` allows public access)                                            *
   *                                                                          *
   ***************************************************************************/
-  PurchaseController: {
-    '*': 'isLoggedIn'
-  },
-  AuthController: true
+  'purchase/*': 'isLoggedIn',
+  'login': true,
 };

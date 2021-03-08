@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
     uid : {
       type: 'number',
-      required: true
+      required: true,
     },
     amount: {
       type: 'number',

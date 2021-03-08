@@ -8,21 +8,111 @@
 		{
 			"name": "login",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "username",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
 				"url": {
-					"raw": ""
+					"raw": "localhost:1337/login",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "username",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"disabled": true
+						}
+					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "newPurchase",
+			"name": "new purchase",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ1c2VybmFtZSIsImlhdCI6MTYxNDg4MzA2NX0.tExiH1Jj_Gr-3_2NJs16_ovStRx6IqdzfIzuzIlQqAk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:1337/purchase?amount=1.1&description=2",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"purchase"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "1.1"
+						},
+						{
+							"key": "description",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "puchase/info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ1c2VybmFtZSIsImlhdCI6MTYxNDg4MzA2NX0.tExiH1Jj_Gr-3_2NJs16_ovStRx6IqdzfIzuzIlQqAk",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "localhost:1337/purchase/info",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"purchase",
+						"info"
+					]
 				}
 			},
 			"response": []
